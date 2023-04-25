@@ -11,6 +11,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+
 @Entity
 @Table(name = "tb_produto")
 public class Produto {
@@ -27,9 +28,7 @@ public class Produto {
 	@Size(min = 5, max = 100, message = "O atributo deve ter entre 5 e 100 char.")
 	private String marca;
 	
-	@ManyToOne
-	@JsonIgnoreProperties("postagem")
-	private Categoria categoria;
+	
 
 	public Long getId() {
 		return id;

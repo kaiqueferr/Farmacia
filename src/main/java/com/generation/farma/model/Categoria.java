@@ -3,8 +3,7 @@ package com.generation.farma.model;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import jakarta.persistence.CascadeType;
+import jakarta.persistence.CascadeType; 
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,9 +22,7 @@ public class Categoria {
 	@Size(min = 5, max = 100, message = "O atributo deve ter entre 5 e 100 char.")
 	private String descricao;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tema", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("tema")
-	private List<Produto> postagem;
+	
 
 	public Long getId() {
 		return id;
